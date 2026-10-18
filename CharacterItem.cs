@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CharacterCustomizer
 {
-    abstract class CharacterItem
+    public abstract class CharacterItem
     {
         private string _name;
         private string _description;
@@ -39,7 +39,7 @@ namespace CharacterCustomizer
         public abstract string GetBonusText();
         public virtual string Describe()
         {
-            return $"{Name,4} {Description} {Cost} {GetCategory()}";
+            return $"{Name,4} {Description} {Cost} {GetCategory()} ";
         }
         public override string ToString()
         {

@@ -3,8 +3,5 @@ using CharacterCustomizer;
 
 Console.WriteLine("Hello, World!");
 
-CharacterItem bad = new CharacterItem("", "", 20);
-Console.WriteLine(bad);
-
-CharacterItem good = new CharacterItem("Hat", "A cool hat", 40);
-Console.WriteLine(good);
+CostumePiece coolHat = new HeadPiece("Cool wig", "very stylish", 25, "Head", "Rare", false);
+Console.WriteLine(coolHat);
