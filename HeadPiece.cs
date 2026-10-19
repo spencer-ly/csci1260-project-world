@@ -38,7 +38,7 @@ namespace CharacterCustomizer
         }
         public override string Describe()
         {
-            return base.Describe() + $"{GetBonusText()}";
+            return base.Describe() + $" {GetBonusText()}";
         }
     }
 }

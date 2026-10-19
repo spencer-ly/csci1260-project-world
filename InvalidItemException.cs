@@ -8,6 +8,6 @@ namespace CharacterCustomizer
 {
     public class InvalidItemException : Exception
     {
-        public InvalidItemException(string message) { }
+        public InvalidItemException(string message):base(message) { }
     }
 }
