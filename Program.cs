@@ -19,7 +19,8 @@ Console.WriteLine(guy.Describe());
 try
 {    
     guy.Equip("Head", coolHat);
-
+    guy.Equip("Torso", fit);
+    guy.Equip("Shoes", shoes);
     foreach(var item in manager.CostumeList)
     {
         Console.WriteLine(item.Describe());
@@ -42,9 +43,36 @@ void Print(IDescribable thing)
 Print(hat);
 Print(guy);
 
+manager.CostumeList.Sort();
+PrintList("Sort by name");
+
+manager.CostumeList.Sort(new ItemByCostComparer());
+PrintList("Sort by cost");
+manager.CostumeList.Sort(new ItemByCategoryComparer());
+PrintList("Sort by category");
+void PrintList(string heading)
+{
+    Console.WriteLine(heading);
+    foreach (CostumePiece piece in manager.CostumeList)
+    {
+        Console.WriteLine(piece.Name + " | " + piece.GetCategory() + " | " + piece.Cost);
+    }
+}
+
+
+
+object[] b = {hat, guy, "Hi"};
+foreach (object thing in b)
+{
+    if (thing is IDescribable c)
+    {  Print(c); }
+    else { Console.WriteLine("Not describable"); }
+}
+
+
 
 //try
 //{
-    
+
 //}
 //catch (InvalidItemException ex) { Console.WriteLine(ex.Message); }

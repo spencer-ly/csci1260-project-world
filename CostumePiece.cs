@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CharacterCustomizer
 {
-    public abstract class CostumePiece : CharacterItem
+    public abstract class CostumePiece : CharacterItem, IComparable<CostumePiece>
     {
         private string _slot;
         private string _rarity;
@@ -35,5 +35,14 @@ namespace CharacterCustomizer
             return base.Describe() + $"{_slot} {_rarity}";
         }
 
+        public int CompareTo(CostumePiece other)
+        {
+            if (other == null)
+            {
+                return 1;
+            }
+            return string.Compare(Name, other.Name);
+            
+        }
     }
 }

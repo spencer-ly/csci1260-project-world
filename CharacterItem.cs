@@ -37,6 +37,10 @@ namespace CharacterCustomizer
 
         public abstract string GetCategory();
         public abstract string GetBonusText();
+
+
+
+
         public virtual string Describe()
         {
             return $"{Name,4} {Description} {Cost} {GetCategory()} ";
