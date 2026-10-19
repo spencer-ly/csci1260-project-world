@@ -1,20 +1,46 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CharacterCustomizer;
 
+CharacterManager manager = new CharacterManager();
+
+CostumePiece hat = new HeadPiece("Hat", "Funky", 20, "Head", "Common", false);
+CostumePiece fit = new Outfit("Suit", "Dapper", 50, "Torso", "Rare", "Felt");
+CostumePiece shoes = new Feet("Sneakers", "Black & white", 20, "Shoes", "Common", false);
 
 Character guy = new Character("SackBoy", 20);
 CostumePiece coolHat = new HeadPiece("Cool wig", "very stylish", 25, "Head", "Rare", false);
+
+manager.Add(hat);
+manager.Add(fit);
+manager.Add(shoes);
+
+Console.WriteLine(guy.Describe());
+
 try
 {    
-    guy.Equip("Torso", coolHat);
+    guy.Equip("Head", coolHat);
 
-    foreach(var item in guy.Wearing)
+    foreach(var item in manager.CostumeList)
     {
         Console.WriteLine(item.Describe());
     }
 
 }
 catch (InvalidItemException ex) { Console.WriteLine(ex.Message); }
+
+try
+{
+    manager.Add(null);
+}
+catch (InvalidItemException ex) { Console.WriteLine(ex.Message); }
+
+void Print(IDescribable thing)
+{
+    Console.WriteLine(thing.Describe());
+}
+
+Print(hat);
+Print(guy);
 
 
 //try

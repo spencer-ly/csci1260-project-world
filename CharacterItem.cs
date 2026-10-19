@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CharacterCustomizer
 {
-    public abstract class CharacterItem
+    public abstract class CharacterItem : IDescribable
     {
         private string _name;
         private string _description;

@@ -32,7 +32,7 @@ namespace CharacterCustomizer
 
         public override string Describe()
         {
-            return base.Describe() + $" {_slot} ";
+            return base.Describe() + $"{_slot} {_rarity}";
         }
 
     }

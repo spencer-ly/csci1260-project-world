@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CharacterCustomizer
 {
-    public class Character
+    public class Character : IDescribable
     {
         private string _name;
         private int _points;
@@ -55,6 +55,21 @@ namespace CharacterCustomizer
                 }
             }
             _wearing.Add(piece);
+        }
+
+        public string Describe()
+        {
+            string worn = "";
+            if (_wearing.Count != 0)
+            {
+
+                foreach (CostumePiece piece in _wearing)
+                    worn = worn + piece.Name + ", ";
+
+
+            }
+            else worn = "nothing";
+            return $"{Name} {Points} {worn}";
         }
 
     }
