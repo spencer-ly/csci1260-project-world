@@ -8,7 +8,7 @@ class Program
     static void Main(string[] args)
     {
 
-        //          === Relationships ===
+        // === Relationships ===
 
         Console.WriteLine("=== Character Customizer ===");
         Console.WriteLine();
@@ -21,7 +21,7 @@ class Program
         sackboy.Style.Eyes = "Lashes";
 
         CostumePiece coolHat = new HeadPiece("Cool Hat", "Funky", 20, "Head", "Common", false);
-        CostumePiece dapperSuit = new Outfit("Dapper Suit", "Snazzy", 60, "Torso", "Rare", "Felt");
+        CostumePiece dapperSuit = new Outfit("Dapper Suit", "Snazzy", 60, "Torso", "Rare", "Felt"); //Inheritance
         CostumePiece sneakers = new Feet("Kicks", "Stylish", 40, "Shoes", "Developer Only", false);
 
         try
@@ -40,7 +40,7 @@ class Program
         manager.Add(dapperSuit);
         manager.Add(sneakers);
 
-        //          === Polymorphism and Interfaces ===
+        // === Polymorphism and Interfaces ===
         foreach (CostumePiece item in manager.CostumeList)
         {
             Console.WriteLine(item.Describe());
@@ -66,7 +66,6 @@ class Program
             Console.WriteLine(thing.Describe());
         }
 
-
         Print(sackboy); 
         Print(dapperSuit);
 
@@ -79,6 +78,8 @@ class Program
             }
         }
 
+        // === Built in Contracts ===
+
         sackboy.Wear("Head", coolHat);
         sackboy.Wear("Torso", dapperSuit);
         sackboy.Wear("Shoes", sneakers);
@@ -88,8 +89,6 @@ class Program
 
         manager.CostumeList.Sort();
         PrintList("Sort by name:");
-
-
 
         manager.CostumeList.Sort(new ItemByCostComparer());
         PrintList("Sort by cost:");
@@ -105,10 +104,12 @@ class Program
 
         itemRecords.Add(new ItemRecord("Cool Hat", "HeadPiece"));
 
-        Console.WriteLine("Before Hash: " + itemRecords.Count);
+        Console.WriteLine("Before HashSet: " + itemRecords.Count);
 
         HashSet<ItemRecord> itemsHash = new HashSet<ItemRecord>(itemRecords);
-        Console.WriteLine("After Hash: " + itemsHash.Count);
+        Console.WriteLine("After HashSet: " + itemsHash.Count);
+
+        // === Exceptions / Files ===
 
         Log log = null;
         try
@@ -141,8 +142,6 @@ class Program
             string lines = String.Format("    {0}", line);
             Console.WriteLine(lines);
         }
-
-
 
     }
 }

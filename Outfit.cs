@@ -57,7 +57,7 @@ namespace CharacterCustomizer
 
         public override string Describe()
         {
-            return base.Describe() + $" {GetBonusText()} Material: {Material}";
+            return base.Describe() + $"Comments: {GetBonusText()} Material: {Material}";
         }
     }
 }

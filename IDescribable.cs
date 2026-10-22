@@ -8,6 +8,6 @@ namespace CharacterCustomizer
 {
     public interface IDescribable
     {
-        string Describe();
+        public string Describe();
     }
 }

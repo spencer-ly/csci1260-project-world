@@ -10,7 +10,7 @@ namespace CharacterCustomizer
     public class Feet : CostumePiece
     {
         private bool _isBarefoot;
-        public bool IsBarefoot;
+        
 
 
         public Feet(string name, string description, int cost, string slot, string rarity, bool isBarefoot)
