@@ -16,11 +16,11 @@ namespace CharacterCustomizer
 
         public ItemRecord(string name, string category)
         {
-            if (name == null)
+            if (string.IsNullOrEmpty(name))
             {
                 throw new InvalidItemException("No name provided");
             }
-            if (category == null)
+            if (string.IsNullOrEmpty(category))
             {
                 throw new InvalidItemException("No category provided");
             }
@@ -41,6 +41,7 @@ namespace CharacterCustomizer
             }
             return false;
         }
+
         public override bool Equals(object? obj)
         {
             return Equals(obj as ItemRecord);
@@ -50,5 +51,6 @@ namespace CharacterCustomizer
         {
             return HashCode.Combine(Name, Category);
         }
+
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CharacterCustomizer
-{
+{ 
     public abstract class CharacterItem : IDescribable
     {
         private string _name;

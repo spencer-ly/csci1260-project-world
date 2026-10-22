@@ -36,7 +36,7 @@ namespace CharacterCustomizer
             _wearing = new List<CostumePiece>();
         }
 
-        public void Equip(string slot, CostumePiece piece)
+        public void Wear(string slot, CostumePiece piece)
         {
             if (piece == null)
             {
@@ -69,7 +69,8 @@ namespace CharacterCustomizer
 
             }
             else worn = "nothing";
-            return $"{Name} {Points} {worn}";
+            return $"Name: {Name} Points: {Points} Wearing: {worn} Skin: {Style.Skin} " +
+                $"Color: {Style.Color} Eyes: {Style.Eyes}";
         }
 
     }

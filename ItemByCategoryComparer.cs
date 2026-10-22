@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CharacterCustomizer
 {
-    internal class ItemByCategoryComparer : IComparer<CostumePiece>
+    public class ItemByCategoryComparer : IComparer<CostumePiece>
     {
         public int Compare(CostumePiece x, CostumePiece y)
         {

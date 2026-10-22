@@ -1,0 +1,50 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CharacterCustomizer
+{
+    public class Log : IDisposable
+    {
+        private StreamWriter _writer;
+        private string _path;
+        private int _count;
+        private bool _isClosed;
+
+        public string Path { get { return _path; } }
+        public int Count { get { return _count; } }
+        public bool IsClosed { get { return _isClosed; } }
+
+
+        public Log(string path)
+        {
+            _writer = new StreamWriter(path);
+            _writer.WriteLine("LOG OPENED");
+            _count = 0;
+            _isClosed = false;
+        }
+
+        public void Write(ItemRecord r)
+        {
+            _count++;
+            _writer.WriteLine("{0,3} {1}", Count, r.Name);
+
+        }
+
+        public void Dispose()
+        {
+            if (_isClosed) return;
+
+            else
+            {
+                _writer.WriteLine("LOG CLOSED, {0} lines written", Count);
+                _writer.Dispose();
+                _isClosed = true;
+            }
+
+        }
+
+    }
+}
