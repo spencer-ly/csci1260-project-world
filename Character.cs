@@ -59,7 +59,7 @@ namespace CharacterCustomizer
 
         public string Describe()
         {
-            string worn = "";
+            string worn = " ";
             if (_wearing.Count != 0)
             {
 

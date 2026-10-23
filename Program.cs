@@ -1,8 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CharacterCustomizer;
 
-
-
 class Program
 {
     static void Main(string[] args)
@@ -21,7 +19,7 @@ class Program
         sackboy.Style.Eyes = "Lashes";
 
         CostumePiece coolHat = new HeadPiece("Cool Hat", "Funky", 20, "Head", "Common", false);
-        CostumePiece dapperSuit = new Outfit("Dapper Suit", "Snazzy", 60, "Torso", "Rare", "Felt"); //Inheritance
+        CostumePiece dapperSuit = new Outfit("Dapper Suit", "Snazzy", 60, "Torso", "Rare", "Felt"); 
         CostumePiece sneakers = new Feet("Kicks", "Stylish", 40, "Shoes", "Developer Only", false);
 
         try
@@ -37,7 +35,7 @@ class Program
         catch (InvalidItemException ex) { Console.WriteLine(ex.Message); }
 
         manager.Add(coolHat);
-        manager.Add(dapperSuit);
+        manager.Add(dapperSuit); 
         manager.Add(sneakers);
 
         // === Polymorphism and Interfaces ===
